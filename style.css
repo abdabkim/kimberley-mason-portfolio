@@ -3,6 +3,9 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body {
     background-color: #023047;
 }
 
@@ -13,12 +16,14 @@
     height:50px;
     margin:0 auto;
     display:flex;
-    flex-direction: row;
+    align-items:center;
     border:1px solid white;
 }
 #nav div{
+    display:flex;
+    align-items:center;
     margin: 0px 10px;
-    height:70px;
+    height: 100%;
     width:100%;
     display: flex;
     justify-content: flex-end;
@@ -43,6 +48,9 @@ a{
     border:2px solid rgb(21, 219, 74);
     height:300px;
     width:100%;
+    display:flex;
+    gap: 1rem;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
