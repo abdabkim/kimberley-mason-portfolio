@@ -2,11 +2,19 @@
     font-family: "Open Sans", sans-serif;
     padding: 0;
     margin: 0;
+    color:white;
     box-sizing: border-box;
 }
 
 body {
-    background-color: #023047;
+    background-color:#000000;
+    color:#ffffff;
+}
+hr{
+    color:white;
+}
+strong{
+    color:white;
 }
 
 /* Navigation Section */
@@ -17,7 +25,7 @@ body {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    border: 1px solid white;
+    
 }
 
 #nav div {
@@ -30,11 +38,15 @@ body {
     justify-content: flex-end;
 }
 
-li {
+#nav li {
     list-style: none;
     display: inline;
     padding: 25px 10px;
     margin-top: 10px;
+}
+#nav .current{
+   border-right:2px solid #ffffff;
+   padding-right: 10px;
 }
 
 a {
@@ -42,14 +54,13 @@ a {
     text-decoration: none;
 }
 
-h2::first-letter {
-    color: red;
+div h2::first-letter {
+    color: #ffc300;
 }
 
 /* Main Section */
 #mainsec {
-    border: 2px solid rgb(21, 219, 74);
-    height: 300px;
+    height: 600px;
     width: 100%;
     display: flex;
     gap: 1rem;
@@ -58,4 +69,173 @@ h2::first-letter {
     justify-content: center;
     text-align: center;
     color: white;
+    font-size: 20px;
 }
+
+/*Buttons*/
+.btn {
+    display: inline-block;
+    padding: 13px 20px;
+    background-color:#001d3d;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* Content Area */
+
+
+/* About Me Section */
+#container {
+    background-color: #000000;
+    width: 60%;
+    height: 500px;
+    margin: 0 auto;
+    border: 2px solid;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+    color: #4445457d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    margin-bottom: 50px;
+}
+#container:hover{
+    transform: translateY(-0.25em);
+}
+
+section h2{
+    color:white;
+    font-size: 30px;
+}
+#aboutsec {
+    height: 600px;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+.card {
+    background-color: #000000;
+    color: white;
+}
+.card:hover{
+    transform: translateY(-0.25em);
+}
+
+/* Education and Experience Section */
+#container2 {
+    background-color: #000000;
+    width: 60%;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding:30px;
+}
+#educationsec{
+    border:1px solid #4445457d;
+    width:400px;
+    height:400px;
+    color:white;
+    padding: 10px 10px;
+}
+#educationsec:hover{
+    transform: translateY(-0.25em);
+}
+#worksec {
+    border: 1px solid#4445457d;
+    width: 400px;
+    height: 400px;
+    color:white;
+    padding:10px 10px;
+}
+#worksec:hover{
+    transform: translateY(-0.25em);
+}
+#educationsec li{
+    list-style: square;
+    color:white;
+}
+
+/* Featured Section */
+#container3 {
+    background-color: #000000;
+    width: 60%;
+    height: 500px;
+    margin: 0 auto;
+    border: 2px solid;
+    color: #4445457d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    margin-bottom: 50px;
+}
+#featuredsec {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.col-sm-6 {
+    display: flex;
+    justify-content: center;
+}
+
+.card2 {
+    background-color: #000000;
+    color: white;
+    margin:0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height:400px;
+    line-height: 25px;
+}
+
+/* Contact Me Section */
+#container3 {
+    background-color: #000000;
+    width: 60%;
+    height: 500px;
+    margin: 0 auto;
+    border: 2px solid;
+    color: #4445457d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    margin-bottom: 50px;
+}
+#contactsec {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+

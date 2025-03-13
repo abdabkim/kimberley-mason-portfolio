@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            width: 100%;
+            background-color: #000000;
+            overflow: hidden;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .welcome-text {
+            font-family: 'Parisienne', cursive;
+            font-size: 10vw;
+            color: #e9bf07;
+            position: relative;
+            display: inline-block;
+            white-space: nowrap;
+        }
+        
+        .welcome-text::after {
+            content: "";
+            position: absolute;
+            right: -0.15em;
+            top: 0.1em;
+            height: 0.9em;
+            width: 2px;
+            background-color: #212529;
+            animation: blink 0.8s infinite;
+        }
+        
+        .typed {
+            display: inline-block;
+            overflow: hidden;
+            width: 0;
+            animation: typing 3s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        @media (max-width: 768px) {
+            .welcome-text {
+                font-size: 15vw;
+            }
+        }
+    </style>
+    <script>
+        // Redirect to index.html after 5 seconds
+        setTimeout(function() {
+            window.location.href = "index.html";
+        }, 5000);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-text">
+            <span class="typed">&lt;! Welcome &gt;</span>
+        </div>
+    </div>
+</body>
+</html>
