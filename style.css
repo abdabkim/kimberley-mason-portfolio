@@ -8,9 +8,11 @@
 
 body {
     background-color: black;
+    
 }
 
 /* Navigation Section */
+
 .navbar {
     background-color: black;
     border-bottom: 2px solid white;
@@ -50,6 +52,12 @@ body {
     text-align: center;
     color: white;
     font-size: 20px;
+    margin-bottom: 140px;
+}
+
+h1
+{
+    font-size:70px;
 }
 
 /* Buttons */
@@ -57,7 +65,7 @@ body {
     display: inline-block;
     padding: 13px 20px;
     margin: 5px 0;
-    background-color: #001d3d;
+    background-color: #063f7b;
     color: #ffffff;
     font-weight: 600;
     text-decoration: none;
@@ -75,7 +83,20 @@ body {
 .btn:hover {
     opacity: 0.8;
 }
+.btn-dark {
+    background-color: transparent;
+    color: #ffffff;
+    font-weight: 600;
+    border: 2px solid #001d3d;
+    border-radius: 10px;
+    padding: 13px 20px;
+    transition: 0.5s;
+}
 
+.btn-dark:hover {
+    background-color: #001d3d;
+    color: white;
+}
 /* About Me Section */
 .section-title {
     text-align: center;
