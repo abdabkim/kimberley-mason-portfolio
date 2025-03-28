@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    background: #0a0f2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.circle-reveal {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #00c3ff;
+    border-radius: 50%;
+    transform: scale(0);
+    z-index: 5;
+    transition: transform 1.5s ease-in-out;
+}
+
+.circle-reveal.active {
+    transform: scale(15);
+}
+
+.circle-reveal.out {
+    transform: scale(0);
+    transition: transform 1.2s ease-in-out;
+}
+
+.welcome-text {
+    position: relative;
+    color: white;
+    font-size: 3rem;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.welcome-text.visible {
+    opacity: 1;
+}
+
+.welcome-text.hidden {
+    opacity: 0;
+}
