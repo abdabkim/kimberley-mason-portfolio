@@ -8,18 +8,54 @@
 
 body {
     background-color: black;
-    
+    scroll-behavior: smooth;
+    padding-top: 56px;
+    /* Add padding to account for fixed navbar */
+}
+
+/* Text Gradient Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+.section-title,
+.navbar-brand {
+    background-image: linear-gradient(to right, #00c6ff, #0072ff, #0046ff, #4a90e2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.card-title {
+    background-image: linear-gradient(to right, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 /* Navigation Section */
-
 .navbar {
     background-color: black;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #00c6ff, #0072ff, #0046ff, #4a90e2) 1;
+    padding: 10px 0;
 }
 
 .navbar-nav .nav-link {
     color: white;
+    font-weight: 500;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    background-image: linear-gradient(to right, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .navbar-toggler {
@@ -40,9 +76,17 @@ body {
     background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
+/* Section Styles */
+.about-section,
+.projects-section,
+.contact-section {
+    padding-top: 80px;
+    margin-bottom: 50px;
+}
+
 /* Main Section */
 #mainsec {
-    height: 600px;
+    height: 100vh;
     width: 100%;
     display: flex;
     gap: 1rem;
@@ -52,12 +96,11 @@ body {
     text-align: center;
     color: white;
     font-size: 20px;
-    margin-bottom: 140px;
+    padding-top: 56px;
 }
 
-h1
-{
-    font-size:70px;
+h1 {
+    font-size: 70px;
 }
 
 /* Buttons */
@@ -65,7 +108,7 @@ h1
     display: inline-block;
     padding: 13px 20px;
     margin: 5px 0;
-    background-color: #063f7b;
+    background-image: linear-gradient(to right, #00c6ff, #0072ff);
     color: #ffffff;
     font-weight: 600;
     text-decoration: none;
@@ -81,38 +124,52 @@ h1
 }
 
 .btn:hover {
-    opacity: 0.8;
+    background-image: linear-gradient(to right, #0072ff, #00c6ff);
+    opacity: 0.9;
 }
+
 .btn-dark {
+    background-image: none;
     background-color: transparent;
     color: #ffffff;
     font-weight: 600;
-    border: 2px solid #001d3d;
+    border: 2px solid;
+    border-image: linear-gradient(to right, #00c6ff, #0072ff) 1;
     border-radius: 10px;
     padding: 13px 20px;
     transition: 0.5s;
 }
 
 .btn-dark:hover {
-    background-color: #001d3d;
+    background-image: linear-gradient(to right, #00c6ff, #0072ff);
     color: white;
 }
+
+.btn-primary {
+    background-image: linear-gradient(45deg, #2193b0, #6dd5ed);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-image: linear-gradient(45deg, #6dd5ed, #2193b0);
+}
+
 /* About Me Section */
 .section-title {
     text-align: center;
-    color: white;
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-#container {
+.container {
     background-color: #000000;
     width: 90%;
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
     border: 2px solid;
-    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+    border-image: linear-gradient(45deg, #00c6ff, #0072ff, #0046ff, #4a90e2) 1;
+    box-shadow: 12px 12px 2px 1px rgba(74, 144, 226, 0.2);
     color: white;
     display: flex;
     flex-direction: column;
@@ -122,8 +179,9 @@ h1
     margin-bottom: 50px;
 }
 
-#container:hover {
+.container:hover {
     transform: translateY(-0.25em);
+    border-image: linear-gradient(45deg, #4facfe, #00f2fe) 1;
 }
 
 #aboutsec {
@@ -137,18 +195,28 @@ h1
 .card {
     background-color: #000000;
     color: white;
+    transition: transform 0.3s ease;
+    margin-bottom: 15px;
+    border: 1px solid;
+    border-image: linear-gradient(to right, #00c6ff, #0072ff) 1;
 }
 
 .card:hover {
     transform: translateY(-0.25em);
+    border-image: linear-gradient(to right, #4facfe, #00f2fe) 1;
+}
+
+.card .btn-primary {
+    margin: 3px;
 }
 
 /* Education and Experience Section */
 #container2 {
     background-color: #000000;
     width: 60%;
-    height: 500px;
-    margin: 0 auto;
+    height: auto;
+    min-height: 300px;
+    margin: 50px auto;
     display: flex;
     justify-content: space-between;
     padding: 30px;
@@ -156,34 +224,42 @@ h1
 
 #educationsec,
 #worksec {
-    border: 1px solid #4445457d;
-    width: 400px;
-    height: 300px;
+    border: 1px solid;
+    border-image: linear-gradient(to bottom, #00c6ff, #0072ff) 1;
+    width: 48%;
+    height: auto;
+    min-height: 300px;
     color: white;
-    padding: 10px 10px;
+    padding: 20px;
+    transition: transform 0.3s ease;
 }
 
 #educationsec:hover,
 #worksec:hover {
     transform: translateY(-0.25em);
+    border-image: linear-gradient(to bottom, #4facfe, #00f2fe) 1;
 }
 
-#educationsec li {
+#educationsec li,
+#worksec li {
     list-style: square;
     color: white;
+    margin-bottom: 10px;
+}
+
+#educationsec dt,
+#worksec dt {
+    color: #4facfe;
 }
 
 /* Featured Section */
-#container3 {
+.container3 {
     background-color: #000000;
     width: 60%;
-    height: 500px;
+    height: auto;
     margin: 0 auto;
-    color: #4445457d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    color: white;
+    padding: 30px;
 }
 
 #featuredsec {
@@ -207,28 +283,107 @@ h1
 
 .card2 {
     background-color: #1a1a1a;
-    padding: 20px;
+    padding: 30px;
     color: white;
     border-radius: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid;
+    border-image: linear-gradient(45deg, #00c6ff, #0072ff) 1;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card2:hover {
+    transform: translateY(-0.25em);
+    border-image: linear-gradient(45deg, #4facfe, #00f2fe) 1;
+}
+
+.project-link {
+    background-image: linear-gradient(to right, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    background-image: linear-gradient(to right, #00f2fe, #4facfe);
+    text-decoration: underline;
 }
 
 /* Contact Me Section */
-#container4 {
+.container4 {
     background-color: #000000;
-    width: 60%;
+    width: 90%;
+    max-width: 900px;
     height: auto;
     margin: 0 auto;
     padding: 30px;
+    border: 2px solid;
+    border-image: linear-gradient(to right, #00c6ff, #0072ff) 1;
+    border-radius: 10px;
+}
+
+#contact-form .form-control {
+    background-color: #1a1a1a;
+    color: white;
+    border: 1px solid;
+    border-image: linear-gradient(to right, #00c6ff, #0072ff) 1;
+    margin-bottom: 15px;
+}
+
+#contact-form .form-control:focus {
+    border-image: linear-gradient(to right, #4facfe, #00f2fe) 1;
+    box-shadow: 0 0 0 0.25rem rgba(74, 144, 226, 0.25);
+}
+
+#contact-form label {
+    margin-bottom: 5px;
+}
+
+#contact-form .btn-success {
+    background-image: linear-gradient(to right, #00c6ff, #0072ff);
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form .btn-success:hover {
+    background-image: linear-gradient(to right, #0072ff, #00c6ff);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Footer */
+.footer {
+    background-color: #000000;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, #00c6ff, #0072ff) 1;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer p {
+    background-image: linear-gradient(to right, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
 }
 
 /* Media Queries for Mobile */
 @media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+
     h2,
-    #container,
+    .container,
     #container2,
-    #container3,
-    #container4 {
+    .container3,
+    .container4 {
         width: 90%;
         height: auto;
         display: flex;
@@ -241,15 +396,14 @@ h1
 
     #container2 {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 10px;
+        flex-direction: column;
+        gap: 20px;
     }
 
     #educationsec,
     #worksec {
-    width: 48%;
-    min-width: 150px;
+        width: 100%;
+        margin-bottom: 20px;
     }
 
     .row {
@@ -260,5 +414,10 @@ h1
     .col-sm-6 {
         width: 100%;
         margin-bottom: 20px;
+    }
+
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.95);
+        padding: 10px;
     }
 }
