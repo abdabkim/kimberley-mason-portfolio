@@ -1,29 +1,77 @@
-const circle = document.getElementById('circle');
-const text = document.getElementById('text');
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const themeIcon = document.querySelector('.theme-icon');
 
-// Step 1: Expand the circle
-setTimeout(() => {
-  circle.classList.add('active');
-}, 200);
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.classList.add(savedTheme);
+        updateThemeIcon(savedTheme);
+    } else {
+        // Default to dark mode if no preference is saved
+        body.classList.add('dark-mode');
+        updateThemeIcon('dark-mode');
+    }
 
-// Step 2: Show the welcome text
-setTimeout(() => {
-  text.classList.add('visible');
-}, 1800);
+    // Theme toggle functionality
+    themeToggle.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+            localStorage.setItem('theme', 'light-mode');
+            updateThemeIcon('light-mode');
+        } else {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark-mode');
+            updateThemeIcon('dark-mode');
+        }
+    });
 
-// Step 3: Hide the welcome text
-setTimeout(() => {
-  text.classList.remove('visible');
-  text.classList.add('hidden');
-}, 3500);
+    // Update theme icon based on current theme
+    function updateThemeIcon(theme) {
+        if (theme === 'dark-mode') {
+            themeIcon.textContent = '☀️';
+        } else {
+            themeIcon.textContent = '🌙';
+        }
+    }
 
-// Step 4: Collapse the circle
-setTimeout(() => {
-  circle.classList.remove('active');
-  circle.classList.add('out');
-}, 4000);
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 
-// Step 5: Redirect to index.html
-setTimeout(() => {
-  window.location.href = "index.html";
-}, 5000);
+    // Add scroll reveal animation
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe project cards for animation
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+});
